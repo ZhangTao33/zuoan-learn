@@ -10,5 +10,4 @@ public class ZuoanLearnApplication {
         SpringApplication.run(ZuoanLearnApplication.class, args);
     }
 
-
 }
