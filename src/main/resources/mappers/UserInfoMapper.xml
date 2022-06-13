@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zuoan.mapper.UserInfoMapper">
+    <delete id="delete" parameterType="Long">
+        delete
+        from userinfo
+        where id = #{id}
+    </delete>
+
+    <insert id="add" parameterType="com.zuoan.po.UserInfo">
+        insert into baling.userinfo (book_name, author, type, down_count, introduction)
+        values (#{bookName}, #{author}, #{type}, #{downCount}, #{introduction});
+    </insert>
+
+    <update id="update" parameterType="com.zuoan.po.UserInfo">
+        update userinfo
+        set book_name    = #{bookName},
+            author       = #{author},
+            type         = #{type},
+            down_count   = #{downCount},
+            introduction = #{introduction}
+        where id = #{id};
+    </update>
+
+    <select id="queryById" parameterType="Long" resultType="com.zuoan.po.UserInfo">
+        select *
+        from userinfo
+        where id = #{id};
+    </select>
+
+    <select id="queryAll" parameterType="Long" resultType="com.zuoan.po.UserInfo">
+        select *
+        from userinfo;
+    </select>
+
+</mapper>
